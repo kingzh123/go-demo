@@ -95,8 +95,6 @@ func writeFileByBase64(name string, base64info string){
 	file.Close()
 }
 
-
-
 //解码JPEG
 func decoderJpeg(data string){
 	reader, err := os.Open("img/test.jpg")
