@@ -4,7 +4,10 @@ import (
 	"encoding/base64"
 	"fmt"
 	"image"
+	"image/draw"
+	"image/jpeg"
 	_ "image/jpeg" //备注：如果没有导入此包，图片解码将报错（无法格式化图片）
+	"image/png"
 	"os"
 	"strings"
 )
@@ -69,8 +72,10 @@ ubeK6t3gnXdG4wwziiii/UTKMOg6dbzJLFE4dSCP3rEdeOM8805tDsGMvySgSsS6rM6gk9eAcUUVftZt
 0HwyBXGeRjmrcUhMg2ghezd//rUUVcTKW5s2jZtY/QDaOKKKK8ip8bPRj8KP/9k=`
 
 func main()  {
+	//合成图片
+	imageComposite()
 	//decoderJpeg(data)
-	writeFileByBase64("./img/testbase64.jpg", data)
+	//writeFileByBase64("./img/testbase64.jpg", data)
 
 }
 
@@ -93,6 +98,45 @@ func writeFileByBase64(name string, base64info string){
 		panic(err)
 	}
 	file.Close()
+}
+
+//图像合成
+func imageComposite() {
+	//背景图
+	backImage, err := os.Open("./img/back.jpg")
+	if err != nil {
+		panic(err)
+	}
+	bImage, err := jpeg.Decode(backImage)
+	if err != nil {
+		panic(err)
+	}
+	defer backImage.Close()
+	//水印图片
+	waterImage, err := os.Open("./img/water.png")
+	if err != nil {
+		panic(err)
+	}
+	wImage, err := png.Decode(waterImage)
+	if err != nil {
+		panic(err)
+	}
+	defer waterImage.Close()
+	//图片偏移量
+	offset := image.Pt(200, 0)
+	//图片的画布大小
+	b := bImage.Bounds()
+	//创建NewRGBA编码器
+	m := image.NewRGBA(b)
+	//画背景图 draw.Src: 源图像透过遮罩后，覆盖在目标图像上（官方解释）图片不漏空
+	draw.Draw(m, b, bImage, image.ZP, draw.Src)
+	//画水印图 draw.Over: 源图像透过遮罩后，替换掉目标图像 （官方解释）png图片漏空
+	draw.Draw(m, wImage.Bounds().Add(offset), wImage, image.ZP, draw.Over)
+	//创建图片
+	newImage, _ := os.Create("./img/newImage.jpg")
+	//图片编码写入文件
+	jpeg.Encode(newImage, m, &jpeg.Options{jpeg.DefaultQuality})
+	defer newImage.Close()
 }
 
 //解码JPEG
