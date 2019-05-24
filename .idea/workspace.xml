@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76e445c5-1054-4ac2-8729-73f3374a5464" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/log.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rand.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,13 +39,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/log.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="79">
-              <caret line="29" column="35" lean-forward="true" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+            <state relative-caret-position="330">
+              <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
               <folding>
                 <element signature="e#14#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/rand.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="25" column="19" lean-forward="true" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+              <folding>
+                <element signature="e#14#44#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -75,6 +87,7 @@
         <option value="$PROJECT_DIR$/image_jpeg.go" />
         <option value="$PROJECT_DIR$/flag.go" />
         <option value="$PROJECT_DIR$/log.go" />
+        <option value="$PROJECT_DIR$/rand.go" />
       </list>
     </option>
   </component>
@@ -94,16 +107,6 @@
             <path>
               <item name="go-demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="go-demo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="go-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="go-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="go-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="go-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="log" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="go-demo" type="b2602c69:ProjectViewProjectNode" />
@@ -160,16 +163,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build log.go">
-    <configuration name="go build coding.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="go-demo" />
-      <working_directory value="$PROJECT_DIR$/" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/coding.go" />
-      <package value="go-demo" />
-      <directory value="$PROJECT_DIR$/" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Go Build.go build rand.go">
     <configuration name="go build html.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go-demo" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -206,13 +200,22 @@
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
+    <configuration name="go build rand.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="go-demo" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/rand.go" />
+      <package value="go-demo" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build rand.go" />
         <item itemvalue="Go Build.go build log.go" />
         <item itemvalue="Go Build.go build image_jpeg.go" />
         <item itemvalue="Go Build.go build os.go" />
         <item itemvalue="Go Build.go build html.go" />
-        <item itemvalue="Go Build.go build coding.go" />
       </list>
     </recent_temporary>
   </component>
@@ -441,10 +444,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/log.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="29" column="35" lean-forward="true" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+        <state relative-caret-position="330">
+          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
           <folding>
             <element signature="e#14#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rand.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="25" column="19" lean-forward="true" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+          <folding>
+            <element signature="e#14#44#0" expanded="true" />
           </folding>
         </state>
       </provider>
