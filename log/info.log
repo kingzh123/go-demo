@@ -1,0 +1,4 @@
+INFO:log.go:48: hello world
+INFO:log.go:49: hello world2
+INFO:2019/05/23 15:00:25 log.go:49: hello world
+INFO:15:00:53 log.go:49: hello world
