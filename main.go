@@ -55,6 +55,15 @@ func helloworld(w http.ResponseWriter, r *http.Request)  {
 	fmt.Fprint(w, "hello world!")
 }
 
+//站内重定向
+func httpRedirect(w http.ResponseWriter, r *http.Request) {
+	//解析参数 不执此方法参数不能被解析
+	r.ParseForm()
+	fmt.Println(r.Form.Get("a"))
+	url := "/say"
+	http.Redirect(w, r, url, http.StatusTemporaryRedirect)
+}
+
 //json 编码
 func jsons() {
 	//切片
@@ -83,12 +92,12 @@ func dejson()  {
 	fmt.Println(redis)
 }
 
-func mains() {
-	dejson()
-	jsons()
-
+func main() {
+	//dejson()
+	//jsons()
 	http.HandleFunc("/say", sayhallo)
 	http.HandleFunc("/", helloworld)
+	http.HandleFunc("/redirect", httpRedirect)
 	err := http.ListenAndServe(":8888", nil)
 	if err != nil {
 		fmt.Println(err)
