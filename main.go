@@ -11,6 +11,7 @@ import (
 	"os"
 	"strings"
 )
+
 //
 var logger *log.Logger
 var file *os.File
@@ -22,8 +23,8 @@ var ro *route.Route
 
 //结构体 规范：名称首字母大写
 type test struct {
-	Id int
-	Name string
+	Id    int
+	Name  string
 	Title string
 }
 
@@ -37,13 +38,13 @@ func init() {
 	logger.SetFlags(log.LstdFlags | log.Lshortfile)
 }
 
-func sayhallo(w http.ResponseWriter, r *http.Request)  {
+func sayhallo(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
 	fmt.Println(r.Form)
 }
 
 // net/http
-func helloworld(w http.ResponseWriter, r *http.Request)  {
+func helloworld(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
 	//fmt.Println("Form: ", r.Form)
 	//fmt.Println("Path: ", r.URL.Path)
@@ -85,7 +86,7 @@ func jsons() {
 /*
  * json 解码
  */
-func dejson()  {
+func dejson() {
 	var s = `{"Name":"s"}`
 	redis := redis.Redis{}
 	json.Unmarshal([]byte(s), &redis)

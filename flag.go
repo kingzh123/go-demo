@@ -5,7 +5,9 @@ import (
 	"fmt"
 	"os"
 )
+
 var name string
+
 func init() {
 	//flag 引用命令行传入的参数 例: flag -n king 或 flag -n=king
 	flag.StringVar(&name, "n", "default", "")

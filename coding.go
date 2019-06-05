@@ -17,14 +17,14 @@ type testx struct {
 
 type returns struct {
 	Code int
-	Msg string
+	Msg  string
 	Data string
 }
 
 type returns2 struct {
 	Code int
-	Msg string
-	Da string
+	Msg  string
+	Da   string
 }
 
 func main() {
@@ -49,11 +49,11 @@ func main() {
 	fmt.Printf("unbase64 msg: %s\n  ", msg)
 
 	//gob
-	t := testx{A:1,B:"test",C:true}
+	t := testx{A: 1, B: "test", C: true}
 	byteBuffer := gobEncrypt(t)
 	fmt.Printf("gob编码的字节流：%#v\n", byteBuffer)
 	tx := gobDecrypte(byteBuffer)
- 	fmt.Println("gob解码数据", tx)
+	fmt.Println("gob解码数据", tx)
 
 }
 
@@ -65,14 +65,13 @@ func base64Encrypt(msg []byte) string {
 
 //base64解码
 func base64Decrypt(base64Text string) string {
-	msg, _:= base64.StdEncoding.DecodeString(base64Text)
+	msg, _ := base64.StdEncoding.DecodeString(base64Text)
 	return string(msg)
 }
 
-
 //gob是go语言自定义的编码格式，其性能要高于json、xml，go本身可以对此编码解码成 struct结构体，一般go和go进行数据通信的话，官方建议使用gob进行解码、编码。
 //gob 编码
-func gobEncrypt(str testx) bytes.Buffer{
+func gobEncrypt(str testx) bytes.Buffer {
 	//字节buff
 	var network bytes.Buffer
 	//创建gob编码器 传递一个 bytes.buffer 类型的指针
@@ -84,6 +83,7 @@ func gobEncrypt(str testx) bytes.Buffer{
 	}
 	return network
 }
+
 //gob 解码
 func gobDecrypte(buffer bytes.Buffer) testx {
 	//创建解码器

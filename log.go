@@ -25,9 +25,9 @@ func byteLog() {
 //log Output
 func outputLog() {
 	var (
-		byte bytes.Buffer
+		byte   bytes.Buffer
 		logger = log.New(&byte, "INFO:", log.Lshortfile)
-		infof = func(info string) {
+		infof  = func(info string) {
 			logger.Output(2, info)
 		}
 	)

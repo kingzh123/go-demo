@@ -7,7 +7,7 @@ import (
 	"fmt"
 )
 
-func main(){
+func main() {
 	key := []byte("abcd")
 	content := []byte("content")
 	hmacmsg := []byte(hmacSha256(key, content))

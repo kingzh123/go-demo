@@ -71,7 +71,7 @@ ubeK6t3gnXdG4wwziiii/UTKMOg6dbzJLFE4dSCP3rEdeOM8805tDsGMvySgSsS6rM6gk9eAcUUVftZt
 3uyVGNthuq3Eei6DK8H7sRR7YuMgHtXkc8rzTNLM26RyWY+p70UVnLY0iEsUipG7rhZBlDkc1HgYoorM
 0HwyBXGeRjmrcUhMg2ghezd//rUUVcTKW5s2jZtY/QDaOKKKK8ip8bPRj8KP/9k=`
 
-func main()  {
+func main() {
 	//合成图片
 	imageComposite()
 	//decoderJpeg(data)
@@ -80,7 +80,7 @@ func main()  {
 }
 
 //base64 解码 保存成文件
-func writeFileByBase64(name string, base64info string){
+func writeFileByBase64(name string, base64info string) {
 	//创建文件
 	file, err := os.Create(name)
 	if err != nil {
@@ -140,7 +140,7 @@ func imageComposite() {
 }
 
 //解码JPEG
-func decoderJpeg(data string){
+func decoderJpeg(data string) {
 	reader, err := os.Open("img/test.jpg")
 	if err != nil {
 		panic(err)
@@ -175,4 +175,3 @@ func decoderJpeg(data string){
 		fmt.Printf("0x%04x-0x%04x: %6d %6d %6d %6d\n", i<<12, (i+1)<<12-1, x[0], x[1], x[2], x[3])
 	}
 }
-

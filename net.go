@@ -33,7 +33,7 @@ func redirectPolicyFunc(req *http.Request, via []*http.Request) error {
 }
 
 //get 请求
-func reqGet(url string){
+func reqGet(url string) {
 	resp, err := http.Get(url)
 	if err != nil {
 		panic(err)
@@ -44,7 +44,7 @@ func reqGet(url string){
 }
 
 //post 请求
-func reqPost(url string, contentType string){
+func reqPost(url string, contentType string) {
 	resp, err := http.Post(url, contentType, strings.NewReader("name=lee"))
 	if err != nil {
 		panic(err)

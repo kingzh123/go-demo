@@ -12,7 +12,7 @@ import (
 	"os"
 )
 
-func main(){
+func main() {
 	//generatePrivateKey(1028)
 	msg := []byte("hello world")
 	//使用公钥进行加密
@@ -35,14 +35,14 @@ func main(){
 func VerifySign(msg []byte, sign string, path string) bool {
 	unhex_sign, _ := hex.DecodeString(sign)
 	//取得公钥
-	publicKey:=getRSAPublicKey(path)
+	publicKey := getRSAPublicKey(path)
 	//计算消息散列值
 	hash := sha256.New()
 	hash.Write(msg)
 	bytes := hash.Sum(nil)
 	//验证数字签名
 	err := rsa.VerifyPKCS1v15(publicKey, crypto.SHA256, bytes, []byte(unhex_sign))
-	return err==nil
+	return err == nil
 }
 
 //通过私钥对密文进行签名
@@ -52,7 +52,7 @@ func RSA_Sign(privateKeyPath string, cipherText []byte) string {
 	hashed := sha256.Sum256(cipherText)
 	privateKey := getRSAPrivateKey(privateKeyPath)
 	sign, err := rsa.SignPKCS1v15(rand.Reader, privateKey, crypto.SHA256, hashed[:])
-	if err!=nil{
+	if err != nil {
 		panic(err)
 	}
 	return hex.EncodeToString(sign)
@@ -73,7 +73,7 @@ func getRSAPublicKey(path string) *rsa.PublicKey {
 	block, _ := pem.Decode(buf)
 	//x509解码
 	publicKeyInterface, err := x509.ParsePKIXPublicKey(block.Bytes)
-	if err!=nil{
+	if err != nil {
 		panic(err)
 	}
 	publicKey := publicKeyInterface.(*rsa.PublicKey)
@@ -82,14 +82,14 @@ func getRSAPublicKey(path string) *rsa.PublicKey {
 
 func getRSAPrivateKey(path string) *rsa.PrivateKey {
 	//打开文件
-	file,err:=os.Open(path)
-	if err!=nil{
+	file, err := os.Open(path)
+	if err != nil {
 		panic(err)
 	}
 	defer file.Close()
 	//获取文件内容
 	info, _ := file.Stat()
-	buf:=make([]byte,info.Size())
+	buf := make([]byte, info.Size())
 	file.Read(buf)
 	//pem解码
 	block, _ := pem.Decode(buf)
@@ -101,24 +101,24 @@ func getRSAPrivateKey(path string) *rsa.PrivateKey {
 //RSA解码
 func RSA_Decrypt(privateKeyPath string, cipherText []byte) []byte {
 	//打开文件
-	file,err:=os.Open(privateKeyPath)
-	if err!=nil{
+	file, err := os.Open(privateKeyPath)
+	if err != nil {
 		panic(err)
 	}
 	defer file.Close()
 	//获取文件内容
 	info, _ := file.Stat()
-	buf:=make([]byte,info.Size())
+	buf := make([]byte, info.Size())
 	file.Read(buf)
 	//pem解码
 	block, _ := pem.Decode(buf)
 	//X509解码
 	privateKey, err := x509.ParsePKCS1PrivateKey(block.Bytes)
-	if err!=nil{
+	if err != nil {
 		panic(err)
 	}
 	//对密文进行解密
-	plainText,_:=rsa.DecryptPKCS1v15(rand.Reader,privateKey,cipherText)
+	plainText, _ := rsa.DecryptPKCS1v15(rand.Reader, privateKey, cipherText)
 	//返回明文
 	return plainText
 }
@@ -139,13 +139,13 @@ func RSA_Encrypt(publicKeyPath string, msg []byte) []byte {
 	block, _ := pem.Decode(buf)
 	//x509解码
 	publicKeyInterface, err := x509.ParsePKIXPublicKey(block.Bytes)
-	if err!=nil{
+	if err != nil {
 		panic(err)
 	}
 	public := publicKeyInterface.(*rsa.PublicKey)
 	//加密明文
 	cipherText, err := rsa.EncryptPKCS1v15(rand.Reader, public, msg)
-	if err!=nil{
+	if err != nil {
 		panic(err)
 	}
 	return cipherText
@@ -153,15 +153,15 @@ func RSA_Encrypt(publicKeyPath string, msg []byte) []byte {
 
 //生成秘钥对（公钥和私钥）
 func generatePrivateKey(bits int) {
-	privateKey, err :=rsa.GenerateKey(rand.Reader, bits)
+	privateKey, err := rsa.GenerateKey(rand.Reader, bits)
 	if err != nil {
 		panic(err)
 	}
 	//将私钥序列化为 PKCS#1 DER 编码形式
 	derStream := x509.MarshalPKCS1PrivateKey(privateKey)
 	block := &pem.Block{
-		Type: "RSA PRIVATE KEY",
-		Bytes:derStream,
+		Type:  "RSA PRIVATE KEY",
+		Bytes: derStream,
 	}
 	//创建私钥文件
 	file, err := os.Create("privateKey.pem")

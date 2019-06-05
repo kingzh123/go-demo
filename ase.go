@@ -31,7 +31,7 @@ func aesCBCDecrypt(key []byte, ciphertext []byte) []byte {
 	if len(ciphertext) < aes.BlockSize {
 		panic("ciphertext too short")
 	}
-	block, err :=aes.NewCipher(key)
+	block, err := aes.NewCipher(key)
 	if err != nil {
 		panic(err)
 	}
@@ -47,7 +47,7 @@ func aesCBCDecrypt(key []byte, ciphertext []byte) []byte {
 //加密规则：加密前需要生成由 key 创建的加密块，然后由 加密块 和 iv(随机字符串) 生成 mode，之后在生成密文
 //注意：被加密的文件必须是aes.BlockSize的倍数
 func aesCBCEncrypt(key []byte, content []byte) []byte {
-	if len(content)%aes.BlockSize !=0 {
+	if len(content)%aes.BlockSize != 0 {
 		panic("加密的密文非aes块的倍数")
 	}
 	block, err := aes.NewCipher(key)
@@ -70,7 +70,7 @@ func aesCBCEncrypt(key []byte, content []byte) []byte {
  * 为不满足 BlockSize 倍数的文本补充剩余字节
  * 原因：aes加密时，被加密的文本必须是 BlockSize的倍数
  */
-func padding(content []byte, BlockSize int) ([]byte) {
+func padding(content []byte, BlockSize int) []byte {
 	//与blocksize倍数差异数
 	diffNumber := BlockSize - len(content)%BlockSize
 	//生成填充文本

@@ -6,14 +6,14 @@ import (
 	"time"
 )
 
-func main()  {
+func main() {
 	rands()
 }
 
 func tests() {
 	//设置种子
 	rand.Seed(time.Now().UnixNano())
-	for i:=0 ; i<10 ; i++  {
+	for i := 0; i < 10; i++ {
 		r := rand.Intn(20)
 		fmt.Println(r)
 	}

@@ -8,7 +8,7 @@ import (
 	"mime"
 )
 
-func main(){
+func main() {
 	dec()
 }
 

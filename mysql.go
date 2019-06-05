@@ -7,16 +7,16 @@ import (
 )
 
 type User struct {
-	ID int64
+	ID    int64
 	Email sql.NullString
 }
 
-func queryOne(db *sql.DB) (User)  {
+func queryOne(db *sql.DB) User {
 	user := new(User)
 	//查询
 	row := db.QueryRow(`select id, email from users where id = 109`)
-	if err :=row.Scan(&user.ID,&user.Email); err != nil{
-		fmt.Printf("scan failed, err:%v",err)
+	if err := row.Scan(&user.ID, &user.Email); err != nil {
+		fmt.Printf("scan failed, err:%v", err)
 	}
 	return *user
 }
