@@ -2,12 +2,16 @@ package main
 
 import (
 	"encoding/base64"
+	"flag"
 	"fmt"
+	"github.com/golang/freetype"
 	"image"
+	"image/color"
 	"image/draw"
 	"image/jpeg"
 	_ "image/jpeg" //备注：如果没有导入此包，图片解码将报错（无法格式化图片）
 	"image/png"
+	"io/ioutil"
 	"os"
 	"strings"
 )
@@ -71,12 +75,60 @@ ubeK6t3gnXdG4wwziiii/UTKMOg6dbzJLFE4dSCP3rEdeOM8805tDsGMvySgSsS6rM6gk9eAcUUVftZt
 3uyVGNthuq3Eei6DK8H7sRR7YuMgHtXkc8rzTNLM26RyWY+p70UVnLY0iEsUipG7rhZBlDkc1HgYoorM
 0HwyBXGeRjmrcUhMg2ghezd//rUUVcTKW5s2jZtY/QDaOKKKK8ip8bPRj8KP/9k=`
 
+var (
+	dpi      = flag.Float64("dpi", 72, "screen resolution in Dots Per Inch")
+	fontfile = flag.String("fontfile", "../../testdata/luxisr.ttf", "filename of the ttf font")
+	hinting  = flag.String("hinting", "none", "none | full")
+	size     = flag.Float64("size", 12, "font size in points")
+	spacing  = flag.Float64("spacing", 1.5, "line spacing (e.g. 2 means double spaced)")
+	wonb     = flag.Bool("whiteonblack", false, "white text on a black background")
+)
+
 func main() {
+	drawContent()
 	//合成图片
-	imageComposite()
+	//imageComposite()
 	//decoderJpeg(data)
 	//writeFileByBase64("./img/testbase64.jpg", data)
 
+}
+
+func drawContent()  {
+	//需要加水印的图片
+	imgfile, _ := os.Open("./img/back.jpg")
+	defer imgfile.Close()
+	jpgimg, _ := jpeg.Decode(imgfile)
+	img := image.NewNRGBA(jpgimg.Bounds())
+	for y := 0; y < img.Bounds().Dy(); y++ {
+		for x := 0; x < img.Bounds().Dx(); x++ {
+			img.Set(x, y, jpgimg.At(x, y))
+		}
+	}
+	//拷贝一个字体文件到运行目录
+	fontBytes, err := ioutil.ReadFile("./font/simhei.ttf")
+	if err != nil {
+		panic(err)
+	}
+	font, err := freetype.ParseFont(fontBytes)
+	if err != nil {
+		panic(err)
+	}
+	f := freetype.NewContext()
+	f.SetDPI(72)
+	f.SetFont(font)
+	f.SetFontSize(80)
+	f.SetClip(jpgimg.Bounds())
+	f.SetDst(img)
+	f.SetSrc(image.NewUniform(color.RGBA{R: 255, G: 0, B: 0, A: 255}))
+	pt := freetype.Pt(img.Bounds().Dx()-800, img.Bounds().Dy()-12)
+	_, err = f.DrawString("林𥖄珍 string 255.43,232.12312", pt)
+	//保存到新文件中
+	newfile, _ := os.Create("./img/font2.jpg")
+	defer newfile.Close()
+	err = jpeg.Encode(newfile, img, &jpeg.Options{100})
+	if err != nil {
+		fmt.Println(err)
+	}
 }
 
 //base64 解码 保存成文件
