@@ -36,7 +36,8 @@ func queryRows(db *sql.DB) {
 
 func main() {
 	//链接数据库
-	dbw, err := sql.Open("mysql", "root:jfinfo88@tcp(192.168.102.6:3306)/jugupiao")
+	//dbw, err := sql.Open("mysql", "root:jfinfo88@tcp(192.168.102.6:3306)/jugupiao")
+	dbw, err := sql.Open("mysql", "jfinfo_qa_ruby:ffc+ZUvzh35p@tcp(rm-2ze4ic7pv96x86o526o.mysql.rds.aliyuncs.com:3306)/jfinfo_qa?charset=utf8")
 	if err != nil {
 		panic(err)
 	}
