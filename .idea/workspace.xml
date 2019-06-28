@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76e445c5-1054-4ac2-8729-73f3374a5464" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/interface.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strconver.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sort.go" beforeDir="false" afterPath="$PROJECT_DIR$/sort.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,11 +23,47 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/net/net.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="70" selection-start-line="11" selection-start-column="70" selection-end-line="11" selection-end-column="70" />
+              <folding>
+                <element signature="e#15#44#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/strconver.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="61">
+              <caret line="50" column="29" lean-forward="true" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="29" />
+              <folding>
+                <element signature="e#14#51#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/interface.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+            <state relative-caret-position="248">
+              <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sort.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="78" column="5" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
+              <folding>
+                <element signature="e#14#39#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -44,6 +81,9 @@
     <findStrings>
       <find>func (</find>
       <find>90</find>
+      <find>make</find>
+      <find>QuoteRune</find>
+      <find>QuoteRuneToASCII</find>
     </findStrings>
   </component>
   <component name="GOROOT" path="/usr/local/go1.2/go" />
@@ -79,9 +119,10 @@
         <option value="$PROJECT_DIR$/test/d_test.go" />
         <option value="$PROJECT_DIR$/trace.go" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/sort.go" />
         <option value="$PROJECT_DIR$/interface/Text.go" />
         <option value="$PROJECT_DIR$/interface.go" />
+        <option value="$PROJECT_DIR$/sort.go" />
+        <option value="$PROJECT_DIR$/strconver.go" />
       </list>
     </option>
   </component>
@@ -102,6 +143,11 @@
             <path>
               <item name="go-demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="go-demo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="go-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="net" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="go-demo" type="b2602c69:ProjectViewProjectNode" />
@@ -144,16 +190,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build interface.go">
-    <configuration name="go build gofunc.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="go-demo" />
-      <working_directory value="$PROJECT_DIR$/" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/gofunc.go" />
-      <package value="go-demo" />
-      <directory value="$PROJECT_DIR$/" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Go Build.go build strconver.go">
     <configuration name="go build interface.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go-demo" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -172,11 +209,20 @@
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
-    <configuration name="go build runtime.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build sort.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go-demo" />
       <working_directory value="$PROJECT_DIR$/" />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/runtime.go" />
+      <filePath value="$PROJECT_DIR$/sort.go" />
+      <package value="go-demo" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build strconver.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="go-demo" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/strconver.go" />
       <package value="go-demo" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
@@ -192,11 +238,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build strconver.go" />
+        <item itemvalue="Go Build.go build sort.go" />
         <item itemvalue="Go Build.go build interface.go" />
         <item itemvalue="Go Build.go build trace.go" />
         <item itemvalue="Go Build.go build pprof.go" />
-        <item itemvalue="Go Build.go build runtime.go" />
-        <item itemvalue="Go Build.go build gofunc.go" />
       </list>
     </recent_temporary>
   </component>
@@ -274,6 +320,16 @@
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
+        <expression-string>utf8.MaxRune</expression-string>
+        <language-id>go</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>string(i)</expression-string>
+        <language-id>go</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>cpuprofile</expression-string>
         <language-id>go</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
@@ -308,40 +364,9 @@
         <language-id>go</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>input</expression-string>
-        <language-id>go</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>charset</expression-string>
-        <language-id>go</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/local/go1.2/go/src/log/log.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/go1.2/go/src/mime/encodedword.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="193" column="4" selection-start-line="193" selection-start-column="4" selection-end-line="193" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/go1.2/go/src/net/http/client.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="75" column="58" lean-forward="true" selection-start-line="75" selection-start-column="23" selection-end-line="75" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/go1.2/go/src/net/http/server.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
@@ -509,16 +534,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/net/net.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#15#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reflect.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -533,20 +548,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="335">
           <caret line="1092" selection-start-line="1092" selection-end-line="1092" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/go1.2/go/src/runtime/proc.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="208" selection-start-line="208" selection-end-line="208" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/go1.2/go/src/runtime/panic.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="689" selection-start-line="689" selection-end-line="689" />
         </state>
       </provider>
     </entry>
@@ -606,13 +607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sort.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="12" selection-start-column="12" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1170">
@@ -634,10 +628,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/local/go1.2/go/src/sort/sort.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="218" selection-start-line="218" selection-end-line="218" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go1.2/go/src/runtime/proc.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="217" selection-start-line="217" selection-end-line="217" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/interface.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+        <state relative-caret-position="248">
+          <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/net/net.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="70" selection-start-line="11" selection-start-column="70" selection-end-line="11" selection-end-column="70" />
+          <folding>
+            <element signature="e#15#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go1.2/go/src/unicode/utf8/utf8.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2850">
+          <caret line="190" column="77" lean-forward="true" selection-start-line="190" selection-start-column="77" selection-end-line="190" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go1.2/go/src/runtime/panic.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="689" selection-start-line="689" selection-end-line="689" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sort.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="78" column="5" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
+          <folding>
+            <element signature="e#14#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/strconver.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="50" column="29" lean-forward="true" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="29" />
+          <folding>
+            <element signature="e#14#51#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
