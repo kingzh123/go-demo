@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
-	"net/textproto"
 	"os"
 	"strings"
 	"text/template"
