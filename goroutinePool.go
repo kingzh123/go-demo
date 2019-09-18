@@ -68,14 +68,11 @@ func (g *Pool) stop(){
 func main() {
 	jobQueue := make(chan Job)
 	resultQueue := make(chan bool)
-
 	p := &Pool{
 		MaxWorker: 5,
 		JobQueue: jobQueue,
 		Result: resultQueue,
 	}
-
-
 	go func (){
 		for i:=0; i<10000000000;i++{
 			job := Job{i}
@@ -83,7 +80,5 @@ func main() {
 		}
 		close(p.JobQueue)
 	}()
-
-
 	p.Run()
 }
