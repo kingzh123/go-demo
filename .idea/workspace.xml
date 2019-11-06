@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76e445c5-1054-4ac2-8729-73f3374a5464" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/params.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpcserver.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rpc/servicerpc.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,13 +59,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build params.go">
-    <configuration name="go build hash.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Build.go build go-demo/rpc">
+    <configuration name="go build go-demo/rpc" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go-demo" />
       <working_directory value="$PROJECT_DIR$/" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/hash.go" />
-      <package value="go-demo" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/rpc/clientrpc.go" />
+      <package value="go-demo/rpc" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
@@ -86,11 +87,11 @@
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
-    <configuration name="go build pool.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build servicerpc.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go-demo" />
       <working_directory value="$PROJECT_DIR$/" />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/pool.go" />
+      <filePath value="$PROJECT_DIR$/rpc/servicerpc.go" />
       <package value="go-demo" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
@@ -106,11 +107,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build servicerpc.go" />
+        <item itemvalue="Go Build.go build go-demo/rpc" />
         <item itemvalue="Go Build.go build params.go" />
         <item itemvalue="Go Build.go build unsafe.go" />
         <item itemvalue="Go Build.go build pointer.go" />
-        <item itemvalue="Go Build.go build hash.go" />
-        <item itemvalue="Go Build.go build pool.go" />
       </list>
     </recent_temporary>
   </component>
@@ -132,7 +133,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
